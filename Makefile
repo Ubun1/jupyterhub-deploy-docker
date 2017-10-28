@@ -40,7 +40,6 @@ notebook_image: pull singleuser/Dockerfile
 		--build-arg DOCKER_NOTEBOOK_IMAGE=$(DOCKER_NOTEBOOK_IMAGE) \
 		singleuser
 
-build: check-files network volumes
-	docker-compose build
+build: check-files network volumes pull notebook_image docker-compose build
 
 .PHONY: network volumes check-files pull notebook_image build
