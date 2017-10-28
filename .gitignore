@@ -1,3 +1,11 @@
 secrets/
 userlist
 .DS_Store
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# Module directory
+.terraform/
