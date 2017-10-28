@@ -37,6 +37,11 @@ resource "aws_instance" "juphub-serv" {
 
     provisioner "remote-exec" {
         inline = [
+            "sudo apt install -y make",
+            "wget -O docker.sh https://get.docker.com",
+            "sh docker.sh"
+            "sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose"
+            "sudo chmod +x /usr/local/bin/docker-compose",
             "git clone https://github.com/Ubun1/jupyterhub-deploy-docker.git",
         ]
         connection {
